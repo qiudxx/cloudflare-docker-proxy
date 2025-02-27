@@ -1,14 +1,6 @@
 import DOCS from './help.html'
 
-// return docs
-if (url.pathname === "/") {
-  return new Response(DOCS, {
-    status: 200,
-    headers: {
-      "content-type": "text/html"
-    }
-  });
-}
+
 
 addEventListener("fetch", (event) => {
   event.passThroughOnException();
@@ -44,6 +36,16 @@ function routeByHosts(host) {
 
 async function handleRequest(request) {
   const url = new URL(request.url);
+  // return docs
+  if (url.pathname === "/") {
+    return new Response(DOCS, {
+      status: 200,
+      headers: {
+        "content-type": "text/html"
+      }
+    });
+  }
+
   const upstream = routeByHosts(url.hostname);
   if (upstream === "") {
     return new Response(
