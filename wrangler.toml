@@ -16,15 +16,15 @@ CUSTOM_DOMAIN = "exmaple.com"
 
 [env.production]
 name = "cloudflare-docker-proxy"
-# routes = [
-#   { pattern = "docker.qiudx.top", custom_domain = true },
-#   { pattern = "quay.qiudx.top", custom_domain = true },
-#   { pattern = "gcr.qiudx.top", custom_domain = true },
-#   { pattern = "k8s-gcr.qiudx.top", custom_domain = true },
-#   { pattern = "k8s.qiudx.top", custom_domain = true },
-#   { pattern = "ghcr.qiudx.top", custom_domain = true },
-#   { pattern = "cloudsmith.qiudx.top", custom_domain = true },
-# ]
+routes = [
+    { pattern = "docker.qiudx.top", custom_domain = true },
+    { pattern = "quay.qiudx.top", custom_domain = true },
+    { pattern = "gcr.qiudx.top", custom_domain = true },
+    { pattern = "k8s-gcr.qiudx.top", custom_domain = true },
+    { pattern = "k8s.qiudx.top", custom_domain = true },
+    { pattern = "ghcr.qiudx.top", custom_domain = true },
+    { pattern = "cloudsmith.qiudx.top", custom_domain = true },
+]
 
 [env.production.vars]
 MODE = "production"
